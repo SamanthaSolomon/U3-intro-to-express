@@ -140,6 +140,8 @@ Add:
 
 - Therefore, it will start and then you won't get your bash prompt back, it'll just hang
 
+1. Visit http://localhost:3000/ in your browser.  You should see your 'Hello world' text. You've successfully created a basic web server!  This will serve dynamic pages to web browsers.
+
 ## Shut down your server
 
 You can't run two servers on the same port and you can get annoying errors if you don't shut your servers down properly. Get in the habit of `control c` to shut your server down when you are done working.
@@ -157,7 +159,7 @@ An NPM package called `nodemon` allows us to run code just like `node`, but it w
 When you start a new project and do `npm init` and go through the prompts, you can set this right away.
 
 
-1. Visit http://localhost:3000/ in your browser.  You should see your 'Hello world' text. You've successfully created a basic web server!  This will serve dynamic pages to web browsers.
+
 
 So let's look a little deeper at our code
 
