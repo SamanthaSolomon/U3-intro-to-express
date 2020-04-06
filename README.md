@@ -161,7 +161,7 @@ When you start a new project and do `npm init` and go through the prompts, you c
 
 
 
-So let's look a little deeper at our code
+## So let's look a little deeper at our code
 
 `const app = express();`
 this creates a shorthand for calling the express function. Less typing!
