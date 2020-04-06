@@ -106,8 +106,9 @@ In the root of our project, `touch server.js`
 
 ![server.js](https://i.imgur.com/FlNsHyM.png)
 
-In React we had used import to import data, packages, Components, however in node we must use **require()**
-[require-vs-es6-import](http://researchhubs.com/post/computing/javascript/nodejs-require-vs-es6-import-export.html)
+In React we had used import to import data, packages, Components, however in node we must use **require()**.
+
+Read more on [require-vs-es6-import](http://researchhubs.com/post/computing/javascript/nodejs-require-vs-es6-import-export.html)
 
 Now that the library has been installed (downloaded), we can use it in our code, by using the `require()` function
 
