@@ -48,7 +48,7 @@ We'll be working with one package throughout this unit called `express` - which 
 
 At first, we'll be running our express server in terminal and we'll interact with it in our browser. Our browser will send requests to our express app, and our express app will send responses back to our own browser.
 
-## Activity - Download our First npm Package
+## Activity - Download Express Package
 
 - cd into `student_examples`
 - `mkdir first_server`
@@ -105,6 +105,10 @@ Inside `node_modules` is all the code that was downloaded so we could use `expre
 In the root of our project, `touch server.js`
 
 ![server.js](https://i.imgur.com/FlNsHyM.png)
+
+In React we had used import to import data, packages, Components, however in node we must use **require()**.
+
+Read more on [require-vs-es6-import](http://researchhubs.com/post/computing/javascript/nodejs-require-vs-es6-import-export.html)
 
 Now that the library has been installed (downloaded), we can use it in our code, by using the `require()` function
 
