@@ -48,7 +48,7 @@ We'll be working with one package throughout this unit called `express` - which 
 
 At first, we'll be running our express server in terminal and we'll interact with it in our browser. Our browser will send requests to our express app, and our express app will send responses back to our own browser.
 
-## Activity - Download our First npm Package
+## Activity - Download Express Package
 
 - cd into `student_examples`
 - `mkdir first_server`
