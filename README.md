@@ -140,7 +140,7 @@ Add:
 
 - Therefore, it will start and then you won't get your bash prompt back, it'll just hang
 
-1. Visit http://localhost:3000/ in your browser.  You should see your 'Hello world' text. You've successfully created a basic web server!  This will serve dynamic pages to web browsers.
+- Visit http://localhost:3000/ in your browser.  You should see your 'Hello world' text. You've successfully created a basic web server!  This will serve dynamic pages to web browsers.
 
 ## Shut down your server
 
