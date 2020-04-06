@@ -140,7 +140,21 @@ Add:
 
 - Therefore, it will start and then you won't get your bash prompt back, it'll just hang
 
-**Note**: If you want to quit your server, you have to use `control c`
+## Shut down your server
+
+You can't run two servers on the same port and you can get annoying errors if you don't shut your servers down properly. Get in the habit of `control c` to shut your server down when you are done working.
+
+## Use nodemon to restart your sever when your code changes
+
+An NPM package called `nodemon` allows us to run code just like `node`, but it will restart the application whenever code in the application's directory is changed. This is really handy and gives us a better workflow.
+
+1. Install it `npm install nodemon -g`
+    - the `-g` tells npm to make the package available for use in the terminal in any directory (globally). You might not be able to install node packages globally by default. You may have to run `sudo npm i nodemon -g` and enter your computer's username and password
+1. Now we can call `nodemon server.js`, and the server will restart whenever the app's code changes
+
+1. If you want to get really fancy, you can go to your `package.json` file and change the value of `main` from `index.js` to `server.js` - now you can just type `nodemon` in terminal and it will 'know' you mean to run `server.js`
+
+When you start a new project and do `npm init` and go through the prompts, you can set this right away.
 
 
 1. Visit http://localhost:3000/ in your browser.  You should see your 'Hello world' text. You've successfully created a basic web server!  This will serve dynamic pages to web browsers.
@@ -245,21 +259,6 @@ Let's add a get route, so when a user goes to `localhost:3000/somedata`, they'll
 
 - We can see the response in the browser
 
-## Shut down your server
-
-You can't run two servers on the same port and you can get annoying errors if you don't shut your servers down properly. Get in the habit of `control c` to shut your server down when you are done working.
-
-## Use nodemon to restart your sever when your code changes
-
-An NPM package called `nodemon` allows us to run code just like `node`, but it will restart the application whenever code in the application's directory is changed. This is really handy and gives us a better workflow.
-
-1. Install it `npm install nodemon -g`
-    - the `-g` tells npm to make the package available for use in the terminal in any directory (globally). You might not be able to install node packages globally by default. You may have to run `sudo npm i nodemon -g` and enter your computer's username and password
-1. Now we can call `nodemon server.js`, and the server will restart whenever the app's code changes
-
-1. If you want to get really fancy, you can go to your `package.json` file and change the value of `main` from `index.js` to `server.js` - now you can just type `nodemon` in terminal and it will 'know' you mean to run `server.js`
-
-When you start a new project and do `npm init` and go through the prompts, you can set this right away.
 
 
 ## package.json and node_modules revisited
