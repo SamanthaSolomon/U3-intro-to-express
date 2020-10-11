@@ -217,7 +217,7 @@ Let's build out a basic bare bones simple server.
 // IMPORT EXPRESS
 const express = require('express');
 // SET THE DEFAULT PORT NUMBER THE WEB SERVER WILL LISTEN IN ON
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 // CREATE A NEW INSTANCE OF EXPRESS
 const app = express();
 // ACTIVATE THE SERVER TO LISTEN ON THE PORT
@@ -295,6 +295,14 @@ app.get('/', (req, res)=>{
 Here we are setting a `GET` route of `/`, which is the default router for the server.  That means if a user goes to `localhost:3000/` this is the method that will get triggered.
 
 The function passed as a second parameter to `app.get()` is executed each time a user (client) goes to http://localhost:3000/somedata
+
+
+```
+    http://localhost:3000/2
+    \___/  \_______/ \__/ \_/
+  protocol    host   port   path*           
+```
+
 
 The function (callback) takes two parameters
 
