@@ -392,14 +392,11 @@ When we downloaded express it installed a lot of code (inside `node_modules`) - 
 
 To avoid tracking/uploading/downloading files that don't need to be tracked or shouldn't be tracked (passwords, secrets) you can create a file called `.gitignore`
 
-Let's add the file.
+Add the following line:
 
-
-1. Create a file called `.gitignore`
-1. In it, add the line `node_modules`
-1. You can check to see if it works by going to `github` if you see your `node_modules` folders there, you have not properly ignored your `node_modules`
-1. note, our class repo already has a `.gitignore`, so you really should never see `node_modules` there
-1. At first, it won't matter if you ignore  your node modules. But once you go to host your server on the web, having these tracked can cause weird errors and make your server break. We'll talk about this more later.
+```sh
+node_modules
+```
 
 Here is a collection of `.gitignore` files to reference depending on what your building. Let's do a quick search for node and see what else we might consider adding. 
 
