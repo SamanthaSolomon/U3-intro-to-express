@@ -229,11 +229,11 @@ Let's build out a basic bare bones simple server.
 ```js
 // IMPORT EXPRESS
 const express = require('express');
-// SET THE DEFAULT PORT NUMBER THE WEB SERVER WILL LISTEN IN ON
-const app = express();
-// ACTIVATE THE SERVER TO LISTEN ON THE PORT
-const PORT = 3000;
 // CREATE A NEW INSTANCE OF EXPRESS
+const app = express();
+// SET THE DEFAULT PORT NUMBER THE WEB SERVER WILL LISTEN IN ON
+const PORT = 3000;
+// ACTIVATE THE SERVER TO LISTEN ON THE PORT
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`);
 });
@@ -276,7 +276,7 @@ This is really handy and gives us a better workflow, much like when working with
 Let's first take a look at the [nodemon npm](https://www.npmjs.com/package/nodemon)  package and then install it. 
 
 ```js
-npm install nodemon -g
+npm i nodemon -g
 // -g installs the package globally 
 
 // depending on permissions you may need to use sudo
@@ -287,18 +287,24 @@ sudo npm i nodemon -g
 Now we can call `nodemon server.js`, and the server will restart whenever the app's code changes
 
 ### Adding A New Script To Package.json
-We can modify the `scripts` section in the `package.json` file to add a new `start` script:
+We can also modify the `scripts` section in the `package.json` file to add a new `start` script:
 
-```
+```sh
 "scripts": {
   "start": "nodemon server.js"
 }
 ```
 
-If you want to get really fancy, you can go to your `package.json` file and change the value of `main` from `index.js` to `server.js` - now you can just type `nodemon` in terminal and it will 'know' you mean to run `server.js`
+If you want to get really fancy, you can go to your `package.json` file then change the value of `main` from `index.js` to `server.js`
 
-```
+```sh
 "main": "server.js",
+```
+
+Now you can just type  `nodemon` in terminal and it will 'know' you mean to run `server.js`
+
+```sh
+nodemon
 ```
 
 ## Adding API Endpoints
@@ -344,11 +350,18 @@ We can build as many routes as we like and customize them to do whatever we want
 
 ### Examine the req & res Objects
 
-Let's add a console log and examine what both `req` and `res` contain. 
+Let's add a console log and examine whats inside the `req` object. 
 
 ```js
 app.get('/', (req, res)=>{
   console.log('get - req', req)
+  res.send('Hello world');
+});
+```
+
+And now let's see what's inside the `res` object.
+```js
+app.get('/', (req, res)=>{
   console.log('get - res', res)
   res.send('Hello world');
 });
@@ -403,6 +416,20 @@ In the Express server in server.js define the following routes:
 **BONUS**
 
 Examine the [Express Response](http://expressjs.com/en/4x/api.html#res) documentation and determine how to send `name`, `fav-foods` and `fav-books` as a single json object. You should create a new route for is called `/alldata`.
+
+<details><summary>Solution</summary>
+
+```js
+app.get('/alldata', (req, res) => {
+    res.json({
+        name: "Hannah",
+        food: "Food",
+        book: "Book"
+    })
+})
+```
+
+</details>
 
 
 <hr>
