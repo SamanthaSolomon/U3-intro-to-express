@@ -344,9 +344,9 @@ In this case we are using a method on the response object (`res.send()`) - that 
 
 We can build as many routes as we like and customize them to do whatever we want.
 
-### Synopsis Of What We Have Done Thus Far
+<!-- ### Synopsis Of What We Have Done Thus Far
 
-![](https://i.imgur.com/eIN0lrM.png)
+![](https://i.imgur.com/eIN0lrM.png) -->
 
 ### Examine the req & res Objects
 
