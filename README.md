@@ -16,28 +16,30 @@ So far, you've been working on the `front end`, you've been building things with
 
 Now we'll start learning about the `back end` and how that is tied to the `front end`.
 
-<img src="https://i.imgur.com/N2gTlSx.png" />
+<img src="https://i.imgur.com/7HqKH1x.png" />
+
+In this unit, we'll be building our own web applications with `Node.js` and the `Express` web server, along with `Mongo` as our database and `Mongoose` as the NPM package to interface with `Mongo`.
 
 
 A backend typically consists of the following:
 
-- a server (takes client requests and sends responses)
+- a server (takes client requests and sends responses) 
 - an application (the logic of what to do with the request - get flight information/get directions to somewhere/ etc.)
-- a database (store, retrieve, update information/data etc.)
+- a database (store, retrieve, update information/data etc.) 
 
 Let's take a moment to think about `Amazon`, Amazon has 300 million products and counting. Each item has its own web page.
 
-Amazon does not have thousands of web developers carefully handcrafting each web page for each item by hand and updating them as needed. Rather, the pages are built dynamically. The developers build an HTML template and then work with the data of the products to create individualized web pages based on the data. Things like price, images of the item, description of the item etc. are stored in a database, this data is retrieved and interpolated with the HTML. This requires the use of a server and a database.
+Amazon does not have thousands of web developers carefully handcrafting each web page for each item by hand and updating them as needed. Rather, the pages are built dynamically. The developers build an HTML template and then work with the data of the products to create individualized web pages based on the data. 
 
-In this unit, we'll be building our own web applications with `Node.js` and the `Express` web server. 
+Things like price, images of the item, description of the item etc. are stored in a database, this data is retrieved and interpolated with the HTML. This requires the use of a server and a database.
 
 ## Install Node packages
 
 Node.js is an application that lets us run JavaScript outside of the browser and in the terminal. We'll use node.js to build simple servers that will respond to browser requests.
 
-Built into Node.js is something called `npm`, which stands for `Node Package Manager`, which will manage Node Packages
+Built into Node.js is something called `npm`, which stands for `Node Package Manager`, which will manage Node Packages and if you have worked with React then you should already be familiar with `npm`. 
 
-Node packages are libraries (or frameworks - see below) of code that provide useful functionality. Much like jQuery for the browser, node packages help us write sophisticated programs with a lot of useful functionality right out of the box. These packages are published at [www.npmjs.com](https://www.npmjs.com/)
+Node packages are libraries (or frameworks - see below) of code that provide useful functionality. These packages are published at [www.npmjs.com](https://www.npmjs.com/)
 
 
 These chunks of code fall into one of two categories:
@@ -52,17 +54,15 @@ These chunks of code fall into one of two categories:
 
 We'll be working with one package throughout this unit called `express` - which calls itself a framework AND unopinionated  `¯\_(ツ)_/¯`
 
-[express](https://www.npmjs.com/package/express) is a `Fast, unopinionated, minimalist web framework for node`.
-
-At first, we'll be running our express server in terminal and we'll interact with it in our browser. Our browser will send requests to our express app, and our express app will send responses back to our own browser.
-
 <hr>
+
+**A bit of review**
 
 **❓ - What is the difference between a library and a framework and when would you choose one over the other?**
 
 <hr>
 
-### Download Express Package 
+### Setting Up Our Server
 
 Let's first get things setup.
 
@@ -81,10 +81,10 @@ We'll get a few prompts for the following:
 
 - the name of our project
 - the version
-- what our main file i
-- several more prompts...
+- what our main file is
+- ...several more prompts...
 
-To keep the defaults, you can just keep pressing enter. 
+To keep the defaults, you can just keep pressing enter on each of these prompts. 
 
 Here is a very minimal `package.json` - it's just a text file with an object written in strict JSON format. 
 
@@ -123,14 +123,15 @@ Running it this way automatically creates the file and accepts all the default v
 
 ### NodeJS Frameworks 
 
-Express will be our choice for a NodeJS Framework in this unit.  However there are several other popular frameworks out there.  Let's a take a look at a few of the following articles on the top node frameworks in 2020
+Express will be our choice for a NodeJS Framework in this unit.  However there are several other popular frameworks out there.  
+
+Let's a take a look at the following articles on the top node frameworks in 2020. 
 
 - [Top 3 Most Popular Frameworks And When To Use Them](https://rapidapi.com/blog/best-nodejs-frameworks/)
 - [Top 20 Best NodeJS Frameworks For Devs in 2020](https://www.ubuntupit.com/best-nodejs-frameworks-for-developers/)
 
 
-
-#### Installing Express
+### Installing Express
 
 <hr>
 
@@ -140,7 +141,7 @@ So let's take a look at the [Express NPM Package](https://www.npmjs.com/package/
 
 <hr>
 
-Let's now install the `express` npm package :
+Let's install the `express` npm package :
 
 ```
 npm i express
@@ -160,10 +161,12 @@ We're not going to edit our `package-lock.json` file, it's just a helper file fo
 
 Inside `node_modules` is all the code that was downloaded so we could use `express`, the code is tucked into folders that are managed by npm. Like `jQuery` or `React`, we don't ever have to look at the source code or modify it in any way, it can just sit there and we'll bring in the code and use it in our own files.  
 
+<hr>
+
 **❓ - What does the node_modules folder contain?**
 
 **❓ - If the folder isn't there how do you go about creating it?**
-
+<hr>
 
 ## Set up a basic Express server
 
@@ -181,12 +184,11 @@ import React from 'react'
 import Form from './Form'
 // Data
 import itemsArr from './data.js'
-
 ```
 
 However in node we use the ES5 keyword **require()** to import modules. 
 
-Now that the `Express` library has been installed, we can use it in our code, by using the `require()` function
+Now that the `Express` library has been installed, we can use it in our code, by using `require()`.
 
 ```javascript
 const express = require('express');
@@ -195,7 +197,7 @@ const express = require('express');
 Let's take a minute and add a console log to see what is stored in the `express` variable
 
 ```js
-console.log(express)
+console.log('express', express)
 ```
 
 ### Executing The File
@@ -216,6 +218,8 @@ Express has much to offer so it's worth sometime to checkout their docs.
 
 [Full express documentation](http://expressjs.com/en/api.html)
 
+We will focus on the `Getting Started` section.
+
 <hr>
 
 ### Building An Express Server
@@ -226,10 +230,10 @@ Let's build out a basic bare bones simple server.
 // IMPORT EXPRESS
 const express = require('express');
 // SET THE DEFAULT PORT NUMBER THE WEB SERVER WILL LISTEN IN ON
-const PORT = 3000;
-// CREATE A NEW INSTANCE OF EXPRESS
 const app = express();
 // ACTIVATE THE SERVER TO LISTEN ON THE PORT
+const PORT = 3000;
+// CREATE A NEW INSTANCE OF EXPRESS
 app.listen(PORT, () => {
   console.log(`Express server listening on port ${PORT}`);
 });
@@ -257,29 +261,33 @@ You can't run two servers on the same port and you can get annoying errors if yo
 The instructor will demo terminating the node process via:
 
 -  `Activity Monitor`
-- terminal:  `ps aux | grep node`
-
-
+- terminal
+  - find all running node processes:  `ps -ef | grep node`
+  - kill a single node processes: `kill -9 "process id number"`
 
 <hr>
 
 ### Hot Reloading Express
 
-An NPM package called allows us to run code just like `node`, but it will restart the application whenever code in the application's directory is changed. This is really handy and gives us a better workflow.
+An NPM package called `nodemon` allows us to run code just like `node`, but will restart the application whenever code in the application's directory is changed.
 
-Let's take a look at the [nodemon](https://www.npmjs.com/package/nodemon)  package and then install it. 
+This is really handy and gives us a better workflow, much like when working with `React`. 
+
+Let's first take a look at the [nodemon npm](https://www.npmjs.com/package/nodemon)  package and then install it. 
 
 ```js
 npm install nodemon -g
+// -g installs the package globally 
+
+// depending on permissions you may need to use sudo
+sudo npm i nodemon -g
 ``` 
 
-the `-g` tells npm to make the package available for use in the terminal in any directory (globally). You might not be able to install node packages globally by default. 
-
-You may have to run `sudo npm i nodemon -g` and enter your computer's username and password
 
 Now we can call `nodemon server.js`, and the server will restart whenever the app's code changes
 
-Then modify the `scripts` section in the `package.json` file to add a `start` script:
+### Adding A New Script To Package.json
+We can modify the `scripts` section in the `package.json` file to add a new `start` script:
 
 ```
 "scripts": {
@@ -289,37 +297,32 @@ Then modify the `scripts` section in the `package.json` file to add a `start` sc
 
 If you want to get really fancy, you can go to your `package.json` file and change the value of `main` from `index.js` to `server.js` - now you can just type `nodemon` in terminal and it will 'know' you mean to run `server.js`
 
+```
+"main": "server.js",
+```
+
 ## Adding API Endpoints
 
-The backend web servers we will be building in this unit will be configured as API servers.  This means they will be configured with `API Endpoint` that will return data based on how the `route` was configured. 
+The backend web servers we will be building in this unit will be configured as API servers.  
+
+This means they will be configured with `API Endpoint` that will return data based on the `route` used to connect with the server. 
 
 ### Our First Route
 
-Let's add our first GET route. 
+Let's add our first route.  This will be a GET route which gets data.  Additional verbs we will work with are: `POST`, `PUT` and `DELETE`.  
 
 
 | **URL** | **HTTP Verb** | 
 |------------|-------------|
 | /         | GET       |   
 
+Here is how we add the route. Here we are setting a `GET` route that responds to the  `/` route, which is the default route for the server.  That means if a user goes to `localhost:3000/` this is the method that will get triggered.
 
 ```js
 app.get('/', (req, res)=>{
   res.send('Hello world');
 });
 ```
-
-Here we are setting a `GET` route of `/`, which is the default router for the server.  That means if a user goes to `localhost:3000/` this is the method that will get triggered.
-
-The function passed as a second parameter to `app.get()` is executed each time a user (client) goes to http://localhost:3000/somedata
-
-
-```
-    http://localhost:3000/2
-    \___/  \_______/ \__/ \_/
-  protocol    host   port   path*           
-```
-
 
 The function (callback) takes two parameters
 
@@ -335,6 +338,7 @@ In this case we are using a method on the response object (`res.send()`) - that 
 
 We can build as many routes as we like and customize them to do whatever we want.
 
+### Synopsis Of What We Have Done Thus Far
 
 ![](https://i.imgur.com/eIN0lrM.png)
 
@@ -350,11 +354,11 @@ app.get('/', (req, res)=>{
 });
 ```
 
-
-
-
+<hr>
 
 **❓ - What does `req` and `res` shorthand represent?**
+
+<hr>
 
 ### Adding A Second Route
 
@@ -398,7 +402,7 @@ In the Express server in server.js define the following routes:
 
 **BONUS**
 
-Examine the [Express Response](http://expressjs.com/en/4x/api.html#res) documentation and determine how to send `name`, `fav-foods` and `fav-books` as a single json object. 
+Examine the [Express Response](http://expressjs.com/en/4x/api.html#res) documentation and determine how to send `name`, `fav-foods` and `fav-books` as a single json object. You should create a new route for is called `/alldata`.
 
 
 <hr>
