@@ -84,12 +84,20 @@ We'll get a few prompts for the following:
 - what our main file i
 - several more prompts...
 
-To keep the defaults, you can just press enter. 
+To keep the defaults, you can just keep pressing enter. 
 
 Here is a very minimal `package.json` - it's just a text file with an object written in strict JSON format. 
 
 
 <img src="https://i.imgur.com/oX88ZQB.png" width=400/>
+
+
+### Package.json
+
+It's totally ok to edit this file - for example, if I forgot to put myself as the author I could add it as a string. If I didn't like my project name, I could update it too. 
+
+**GOTCHA** be careful to write any additions to the file using proper JSON format or else you will get errors and your code will not run.
+
 
 <hr>
 
@@ -97,11 +105,7 @@ Here is a very minimal `package.json` - it's just a text file with an object wri
 
 <hr>
 
-### Package.json
 
-It's totally ok to edit this file - for example, if I forgot to put myself as the author I could add it as a string. If I didn't like my project name, I could update it too. **GOTCHA** be careful to keep this as a proper object and keep track of your strings or else you will get errors and your code will not run.
-
-<hr>
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 2min 
 
@@ -109,8 +113,13 @@ The instructor will demo making a few edits that don't follow the rules of JSON 
 
 <hr>
 
+Let's take a moment and delete both `.json` files.  Now we will run `npm init` again but this time with the following flag:
 
-As you explore different npm packages and read documentation you may see one syntax or the other.
+```sh
+npm init -y
+```
+
+Running it this way automatically creates the file and accepts all the default values. 
 
 ### NodeJS Frameworks 
 
@@ -269,6 +278,14 @@ the `-g` tells npm to make the package available for use in the terminal in any 
 You may have to run `sudo npm i nodemon -g` and enter your computer's username and password
 
 Now we can call `nodemon server.js`, and the server will restart whenever the app's code changes
+
+Then modify the `scripts` section in the `package.json` file to add a `start` script:
+
+```
+"scripts": {
+  "start": "nodemon server.js"
+}
+```
 
 If you want to get really fancy, you can go to your `package.json` file and change the value of `main` from `index.js` to `server.js` - now you can just type `nodemon` in terminal and it will 'know' you mean to run `server.js`
 
