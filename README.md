@@ -52,13 +52,11 @@ These chunks of code fall into one of two categories:
     - Is also a pre-conceived skeleton for an application
     - It knows what you're going to build and is somewhat opinionated about how you should do it
 
-We'll be working with one package throughout this unit called `express` - which calls itself a framework AND unopinionated  `¯\_(ツ)_/¯`
+We'll be working with one package throughout this unit called `express` - which calls itself a framework AND unopinionated  `¯\_(ツ)_/¯`. 
 
 <hr>
 
-**A bit of review**
-
-**❓ - What is the difference between a library and a framework and when would you choose one over the other?**
+**❓ - What is the difference between a library and a framework?** 
 
 <hr>
 
@@ -66,27 +64,27 @@ We'll be working with one package throughout this unit called `express` - which 
 
 Let's first get things setup.
 
-- cd into `student_examples`
-- `mkdir first_server`
-- `cd first_server`
+- cd into student_examples: `cd student_examples`
+- create a new directory: `mkdir first_server`
+- cd into that directory: `cd first_server`
 
 
-First we have to initialize our directory with a `package.json` file. We can create it interactively by typing the following into the terminal.
+First we need to initialize our directory with a `package.json` file. We can create it interactively by typing the following into the terminal.
 
 ```sh
 npm init
 ```
 
-We'll get a few prompts for the following:
+It will provide the following prompts:
 
 - the name of our project
 - the version
 - what our main file is
 - ...several more prompts...
 
-To keep the defaults, you can just keep pressing enter on each of these prompts. 
+To keep the defaults, you can just keep pressing `enter` on each of these prompts. 
 
-Here is a very minimal `package.json` - it's just a text file with an object written in strict JSON format. 
+Here is the end result of our new `package.json`. It's just a text file with an object written in strict JSON format. 
 
 
 <img src="https://i.imgur.com/oX88ZQB.png" width=400/>
@@ -94,7 +92,7 @@ Here is a very minimal `package.json` - it's just a text file with an object wri
 
 ### Package.json
 
-It's totally ok to edit this file - for example, if I forgot to put myself as the author I could add it as a string. If I didn't like my project name, I could update it too. 
+It's totally ok to edit this file. For example, if I forgot to put myself as the author I could add it as a string. 
 
 **GOTCHA** be careful to write any additions to the file using proper JSON format or else you will get errors and your code will not run.
 
@@ -123,7 +121,7 @@ Running it this way automatically creates the file and accepts all the default v
 
 ### NodeJS Frameworks 
 
-Express will be our choice for a NodeJS Framework in this unit.  However there are several other popular frameworks out there.  
+Express will be our choice for a `NodeJS Web Framework` in this unit.  However there are several other popular web frameworks out there.  
 
 Let's a take a look at the following articles on the top node frameworks in 2020. 
 
@@ -165,7 +163,7 @@ Inside `node_modules` is all the code that was downloaded so we could use `expre
 
 **❓ - What does the node_modules folder contain?**
 
-**❓ - If the folder isn't there how do you go about creating it?**
+<!-- **❓ - If the folder isn't there how do you go about creating it?** -->
 <hr>
 
 ## Set up a basic Express server
@@ -175,7 +173,7 @@ In the root of our project, `touch server.js`
 
 <img src="https://i.imgur.com/FlNsHyM.png" />
 
-In `React` we had used the ES6 keyword `import` to import the following:
+In `React` we had used the ES6 keyword `import` to import libraries.
 
 ```js
 // 3rd party packages
@@ -202,7 +200,7 @@ console.log('express', express)
 
 ### Executing The File
 
-In order to see the console log we must run the file at least once. 
+In order to see the console log we must run the file from the terminal at least once. 
 
 ```js
 node server.js
@@ -248,17 +246,19 @@ Start the app by executing `node server.js` in the command line. It'll now run c
 
 Therefore, it will start and then you won't get your bash prompt back, it'll just hang
 
-Visit http://localhost:3000/ in your browser.  You should see your 'Hello world' text. You've successfully created a basic web server!  This will serve dynamic pages to web browsers.
+Visit http://localhost:3000/ in your browser.  You should see your `Hello world` text. You've successfully created a basic web server!  This will serve dynamic pages to web browsers.
 
 ### Shut down your server
 
-You can't run two servers on the same port and you can get annoying errors if you don't shut your servers down properly. Get in the habit of `control c` to shut your server down when you are done working.
+You can't run two servers on the same port and you can encounter performance issues and/or annoying errors if you don't shut your servers down properly. 
+
+We can shut the server down using `control c`. 
 
 <hr>
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 2min 
 
-The instructor will demo terminating the node process via:
+The instructor will demo terminating the node process via the following:
 
 -  `Activity Monitor`
 - terminal
@@ -402,7 +402,7 @@ app.get('/somedata', (req, res)=>{
 
 #### <g-emoji class="g-emoji" alias="alarm_clock" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/23f0.png">⏰</g-emoji> Activity - 10min 
 
-In the Express server in server.js define the following routes:
+In server.js let's define the following routes:
 
 | **URL** | **HTTP Verb** | Action |
 |------------|-------------|-------------|
@@ -415,7 +415,11 @@ In the Express server in server.js define the following routes:
 
 **BONUS**
 
-Examine the [Express Response](http://expressjs.com/en/4x/api.html#res) documentation and determine how to send `name`, `fav-foods` and `fav-books` as a single json object. You should create a new route for is called `/alldata`.
+Examine the [Express Response](http://expressjs.com/en/4x/api.html#res) documentation and determine how to send `name`, `fav-foods` and `fav-books` as a single json object. 
+
+HINT: This requires that you create a new route, possibly one called  `/alldata`.
+
+<hr>
 
 <details><summary>Solution</summary>
 
@@ -432,7 +436,7 @@ app.get('/alldata', (req, res) => {
 </details>
 
 
-<hr>
+
 
 ## Adding .gitignore File
 
