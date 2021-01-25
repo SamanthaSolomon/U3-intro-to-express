@@ -4,11 +4,13 @@
 
 ## Lesson Objectives
 
-1. Describe what is a `back end`
-1. Install `Node packages`
-1. Set up a basic `Express` server
-1. Set up a basic `GET route`
-1. Use `nodemon` to restart your sever when your code changes
+- Describe what is a `back end`
+- Creating a new `package.json` file
+- Install `Node packages` 
+- Set up a basic `Express` server
+- Set up a basic `GET route`
+- Use `nodemon` to restart your sever when your code changes
+- Edit `package.json` and add a new startup script
 
 ## Framing
 
